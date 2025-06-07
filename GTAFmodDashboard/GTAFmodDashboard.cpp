@@ -11,10 +11,10 @@ GTAFmod_Ext_GetCurrentRPM gtaFmod_Ext_GetCurrentRPM;
 typedef int(__cdecl* GTAFmod_Ext_GetCurrentGear)();
 GTAFmod_Ext_GetCurrentGear gtaFmod_Ext_GetCurrentGear;
 
-typedef void(__cdecl* GTAFmod_Ext_SetVehicleFMODBank)(CVehicle* vehicle, char* bank, char* absolutePath);
+typedef void(__cdecl* GTAFmod_Ext_SetVehicleFMODBank)(CVehicle* vehicle, char* bank, const char* absolutePath);
 GTAFmod_Ext_SetVehicleFMODBank gtaFmod_Ext_SetVehicleFMODBank;
 
-typedef void(__cdecl* GTAFmod_Ext_SetModelIdFMODBank)(int id, char* bank, char* absolutePath);
+typedef void(__cdecl* GTAFmod_Ext_SetModelIdFMODBank)(int id, char* bank, const char* absolutePath);
 GTAFmod_Ext_SetModelIdFMODBank gtaFmod_Ext_SetModelIdFMODBank;
 
 typedef void(__cdecl* GTAFmod_Ext_SetEngineSoundIdFMODBank)(int id, char* bank, char* absolutePath);
