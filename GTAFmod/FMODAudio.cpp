@@ -9,7 +9,7 @@
 using std::string;
 namespace fs = std::filesystem;
 
-void FMODAudio::LoadBank(FMOD::Studio::System* fmodSystem, char* absolutePath)
+void FMODAudio::LoadBank(FMOD::Studio::System* fmodSystem, const char* absolutePath)
 {
     m_bIsLoaded = false;
 

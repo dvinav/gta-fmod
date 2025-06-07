@@ -21,7 +21,7 @@ public:
     FMOD_3D_ATTRIBUTES m_ListenerAttributes;
     BankINIConfig* m_Ini;
 
-    void LoadBank(FMOD::Studio::System* fmodSystem, char* absolutePath);
+    void LoadBank(FMOD::Studio::System* fmodSystem, const char* absolutePath);
 
     static void CheckError(FMOD_RESULT result, const char* text)
     {
