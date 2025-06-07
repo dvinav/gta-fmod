@@ -4,12 +4,20 @@
 class INIConfig
 {
 public:
-	//FMOD
+	// FMOD
 	bool m_bUseLogo;
 	std::string m_sDefaultBank;
 
-	//Audio
+	// Audio
 	float m_fMasterVolume;
+
+	// Vehicle Enable Flags
+	bool m_bEnableOnMotorbikes;
+	bool m_bEnableOnCars;
+	bool m_bEnableOnBigVehicles;
+
+	// RPM Mode
+	int m_iRPMmode;
 
 	INIConfig(std::string iniPath)
 	{
@@ -17,7 +25,15 @@ public:
 		m_bUseLogo = ini.ReadBoolean("FMOD", "UseLogo", true);
 		m_sDefaultBank = ini.ReadString("FMOD", "DefaultBank", "");
 
-		m_fMasterVolume = ini.ReadFloat("Audio", "MasterVolume", 1.0);
+		m_fMasterVolume = ini.ReadFloat("Audio", "MasterVolume", 1.0f);
+
+		m_bEnableOnMotorbikes = ini.ReadBoolean("Vehicles", "EnableOnMotorbikes", true);
+		m_bEnableOnCars = ini.ReadBoolean("Vehicles", "EnableOnCars", true);
+		m_bEnableOnBigVehicles = ini.ReadBoolean("Vehicles", "EnableOnBigVehicles", true);
+
+		m_iRPMmode = ini.ReadInteger("Audio", "RPMmode", 0);
 	}
+	
+
 };
 
