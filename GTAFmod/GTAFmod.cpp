@@ -87,7 +87,7 @@ public:
 
             Events::drawMenuBackgroundEvent += [] {
 
-                if (FrontEndMenuManager.m_nCurrentMenuPage == eMenuPage::MENUPAGE_AUDIO_SETTINGS)
+                if (FrontEndMenuManager.m_nCurrentMenuPage == eMenuPage::MENUPAGE_SOUND_SETTINGS)
                 {
                     // Setup texture
                     RwRenderStateSet(rwRENDERSTATETEXTURERASTER, m_logoTex->raster);
@@ -246,7 +246,7 @@ public:
                 maxRPM -= 2000;
             }
             float targetRpm = maxRPM * params->m_fVelocityChangingPercentage;
-            targetRpm = max(currentAudio->m_Ini->m_fMinRPM, targetRpm);
+            targetRpm = std::max(currentAudio->m_Ini->m_fMinRPM, targetRpm);
 
             //Set 3D space position
             CVector camPos = TheCamera.GetPosition();
@@ -382,7 +382,7 @@ public:
     static void InitializeDefaultBank()
     {
         defaultBank = new FMODAudio();
-        defaultBank->LoadBank(fmodSystem, PLUGIN_PATH((char*)iniConfig->m_sDefaultBank.c_str()));
+        defaultBank->LoadBank(fmodSystem, PLUGIN_PATH(iniConfig->m_sDefaultBank.c_str()));
     }
 
     static void SearchCustomBanks()
